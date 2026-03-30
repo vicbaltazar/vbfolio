@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitória Baltazar — Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230D0D0F'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%23E63946'>VB</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-ball">
+      <div class="loader-top"></div>
+      <div class="loader-bot"></div>
+      <div class="loader-mid"></div>
+      <div class="loader-center"></div>
+    </div>
+    <div class="loader-text">
+      <span class="loader-label">// Carregando</span>
+      <span class="loader-name">vb<span>_</span>dev</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">vb<span>_</span>dev</div>
+  <ul id="nav-menu">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#experiencia">Exp</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="VitoriaBcv.pdf" download="Vitoria_Baltazar_CV.pdf" class="btn btn-outline" style="padding:0.6rem 1.2rem;font-size:0.7rem">
+      <i class="fa-solid fa-download"></i> Download CV
+    </a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+      <i class="fa-solid fa-bolt theme-icon"></i>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"> 
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="scroll-bar"></div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span id="typing-text"></span>
+      <span class="typing-cursor">|</span>
+    </div>
+    <h1>
+      <span class="first glitch" data-text="Vitória">Vitória</span>
+      <span class="last letter-reveal">
+        <span style="--i:0">B</span>
+        <span style="--i:1">a</span>
+        <span style="--i:2">l</span>
+        <span style="--i:3">t</span>
+        <span style="--i:4">a</span>
+        <span style="--i:5">z</span>
+        <span style="--i:6">a</span>
+        <span style="--i:7">r</span>
+      </span>
+    </h1>
+    <p class="hero-desc">
+      Desenvolvedora FullStack Júnior com projetos práticos em JavaScript, Node.js, Python e bancos de dados relacionais e não relacionais. Busco contribuir com aplicações web completas enquanto evoluo no dia a dia com o time.
+    </p>
+    <div class="hero-cta">
+      <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+      <a href="#contato" class="btn btn-outline">Entrar em contato</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img src="garfield-pix.png" alt="Foto" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item"><span class="ticker-dot"></span>JavaScript</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Node.js</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Java</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Python</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SQLite</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>MongoDB</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Git & GitHub</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Power BI</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>HTML & CSS</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>APIs REST</div>
+    <!-- duplicado para loop -->
+    <div class="ticker-item"><span class="ticker-dot"></span>JavaScript</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Node.js</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Java</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Python</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SQLite</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>MongoDB</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Git & GitHub</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>Power BI</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>HTML & CSS</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>APIs REST</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="sobre">
+  <div class="reveal">
+    <div class="section-label">// 001 — sobre</div>
+    <h2>Dev FullStack<br>em construção</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Oi! Eu sou a <strong>Vitória Baltazar</strong>, desenvolvedora Júnior, focada em <strong>desenvolvimento FullStack</strong> com JavaScript, Node.js, Python e bancos de dados como SQLite e MongoDB.</p>
+        <p>No meu dia a dia, gosto de transformar ideias em aplicações funcionais: APIs organizadas, dados bem estruturados e código versionado com Git/GitHub. Meus projetos misturam o que eu curto, como Pokémon, MPB e jogos, com problemas reais e boas práticas.</p>
+        <p>Atualmente curso <strong>Bacharelado em Ciência da Computação</strong> na Estácio (EaD) e busco uma <strong>vaga Full Stack Júnior ou estágio</strong> para contribuir com o time enquanto continuo evoluindo como dev.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num" data-target="3" data-suffix="+">3<span>+</span></div>
+          <div class="stat-label">Projetos em destaque</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="10" data-suffix="+">10<span>+</span></div>
+          <div class="stat-label">Repositórios no GitHub</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="1" data-suffix="x">1<span>x</span></div>
+          <div class="stat-label">Experiência atual em TI</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="∞" data-suffix="">∞</div>
+          <div class="stat-label">Vontade de aprender</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+  <div class="reveal">
+    <div class="section-label">// 002 — habilidades</div>
+    <h2>Techs que eu uso</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Backend</div>
+        <div class="skill-list">
+          <div class="skill-item primary"><span class="skill-dot"></span>Node.js</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>Python</div>
+          <div class="skill-item medium"><span class="skill-dot"></span>Java (básico)</div>
+          <div class="skill-item"><span class="skill-dot"></span>APIs REST</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Front &amp; Web</div>
+        <div class="skill-list">
+          <div class="skill-item primary"><span class="skill-dot"></span>JavaScript</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>HTML &amp; CSS</div>
+          <div class="skill-item medium"><span class="skill-dot"></span>React (estudos)</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Banco de Dados &amp; Dados</div>
+        <div class="skill-list">
+          <div class="skill-item primary"><span class="skill-dot"></span>SQLite</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>SQL</div>
+          <div class="skill-item medium"><span class="skill-dot"></span>MongoDB</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>Power BI</div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Ferramentas &amp; Soft Skills</div>
+        <div class="skill-list">
+          <div class="skill-item primary"><span class="skill-dot"></span>Git &amp; GitHub</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>VS Code</div>
+          <div class="skill-item primary"><span class="skill-dot"></span>IntelliJ IDEA</div>
+          <div class="skill-item"><span class="skill-dot"></span>Organização &amp; atenção a detalhes</div>
+          <div class="skill-item"><span class="skill-dot"></span>Trabalho em equipe</div>
+          <div class="skill-item"><span class="skill-dot"></span>Comunicação</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projetos">
+  <div class="reveal">
+    <div class="section-label">// 003 — projetos</div>
+    <h2>O que eu construí</h2>
+    <div class="projects-grid">
+
+      <div class="project-card featured">
+        <div class="project-num">Projeto 001 · Backend · Destaque</div>
+        <div class="project-title">Amor Doce CRUD</div>
+        <div class="project-desc">
+          CRUD completo com Node.js e SQLite, com rotas para cadastro, listagem e exclusão em banco relacional. Prática de SQL, conexão com banco de dados e organização em camadas da aplicação.
+        </div>
+        <div class="project-tags">
+          <span class="tag red">Node.js</span>
+          <span class="tag gold">SQLite</span>
+          <span class="tag purple">SQL</span>
+          <span class="tag">Backend</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/amor-doce-crud" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">★</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">Projeto 002 · Java · Console</div>
+        <div class="project-title">MPB-Dex</div>
+        <div class="project-desc">
+          Aplicação console para catalogar artistas de MPB/indie BR com cadastro, busca, filtro por década e remoção. Orientação a objetos com múltiplas classes, listas e menus interativos em Java.
+        </div>
+        <div class="project-tags">
+          <span class="tag red">Java</span>
+          <span class="tag">IntelliJ IDEA</span>
+          <span class="tag purple">OOP</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/mpb-dex" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">♪</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">Projeto 003 · Frontend · CSS</div>
+        <div class="project-title">3D Gallery</div>
+        <div class="project-desc">
+          Galeria de imagens com efeito 3D, transições CSS e manipulação de DOM via JavaScript. Foco em layout responsivo e transformações CSS avançadas.
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag gold">CSS</span>
+          <span class="tag red">JavaScript</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/3d-gallery" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">◈</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">Projeto 004 · Python · Backend</div>
+        <div class="project-title">Sistema Bancário Pokémon</div>
+        <div class="project-desc">
+          Simulação de sistema bancário temático em Python. Operações de depósito, saque e extrato com foco em regras de negócio e funções bem organizadas.
+        </div>
+        <div class="project-tags">
+          <span class="tag red">Python</span>
+          <span class="tag">Console</span>
+          <span class="tag gold">Pokémon</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/sistema-bancario-pokemon" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">⬡</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">Projeto 005 · Dados · Power BI</div>
+        <div class="project-title">Power BI Pokémon</div>
+        <div class="project-desc">
+          Dashboard em Power BI com dados de Pokémon — visualizações para acompanhar estatísticas e comparar atributos entre espécies.
+        </div>
+        <div class="project-tags">
+          <span class="tag purple">Power BI</span>
+          <span class="tag gold">Dados</span>
+          <span class="tag">Pokémon</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/powerbi-pokemon" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">◎</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">Projeto 006 · Frontend · Landing</div>
+        <div class="project-title">Landing Page Mount</div>
+        <div class="project-desc">
+          Landing page temática do Mount focada em layout responsivo, tipografia e estrutura de seções bem definidas.
+        </div>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag gold">CSS</span>
+          <span class="tag">Responsivo</span>
+        </div>
+        <a href="https://github.com/vicbaltazar/mount-landing" target="_blank" class="project-link" data-tooltip="Ver código fonte">
+          Ver no GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <span class="poke-accent">▲</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experiencia" class="exp-section">
+  <div class="reveal">
+    <div class="section-label">// 004 — experiência &amp; formação</div>
+    <h2>Minha jornada</h2>
+
+    <div class="exp-item">
+      <div class="exp-date">2026 — atual</div>
+      <div>
+        <div class="exp-role">Aprendiz Administrativo em TI</div>
+        <div class="exp-company">Viação Sertanezina — Sertãozinho, SP</div>
+        <ul class="exp-desc">
+          <li>Cadastro e atualização de dados de alunos universitários em sistema interno, garantindo precisão e integridade das informações.</li>
+          <li>Atendimento ao público presencial, por telefone e WhatsApp, orientando estudantes e responsáveis sobre o serviço de transporte universitário.</li>
+          <li>Conferência de comprovantes de pagamento e emissão/carimbo de carteirinhas de transporte escolar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Jan 2026 — atual</div>
+      <div>
+        <div class="exp-role">Bacharelado em Ciência da Computação</div>
+        <div class="exp-company">Centro Universitário Estácio de Sá — EaD</div>
+        <ul class="exp-desc">
+          <li>Formação em andamento com foco em fundamentos de computação, lógica, algoritmos e desenvolvimento de software.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Fev — Dez 2025</div>
+      <div>
+        <div class="exp-role">Análise e Desenvolvimento de Sistemas</div>
+        <div class="exp-company">UNIP — Universidade Paulista</div>
+        <ul class="exp-desc">
+          <li>Base técnica em desenvolvimento de sistemas, banco de dados e lógica de programação (curso interrompido para migração de graduação).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato">
+  <div class="reveal">
+    <div class="section-label">// 005 — contato</div>
+    <h2>Vamos conversar?</h2>
+    <div class="contact-inner">
+      <div>
+        <div class="contact-text">
+          <p>Estou aberta a oportunidades de estágio, vaga júnior ou projetos colaborativos em desenvolvimento. Se o que você viu aqui combina com o que procura, é só chamar.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:vicbaltazar287@icloud.com" class="contact-link">
+            <div class="contact-link-icon">✉</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-val">vicbaltazar287@icloud.com</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://github.com/vicbaltazar" target="_blank" class="contact-link">
+            <div class="contact-link-icon">⌨</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-val">github.com/vicbaltazar</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://linkedin.com/in/vitória-baltazar-3944a72ab" target="_blank" class="contact-link">
+            <div class="contact-link-icon">in</div>
+            <div class="contact-link-text">
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-val">Vitória Baltazar</div>
+            </div>
+            <span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Nome</label>
+          <input type="text" class="form-input" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensagem</label>
+          <textarea class="form-textarea" placeholder="Conte sobre a oportunidade..." required></textarea>
+        </div>
+        <button type="submit" class="form-btn" id="submit-btn">
+          <span id="btn-text">Enviar mensagem</span>
+          <span>→</span>
+        </button>
+        <div id="form-msg" style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--red);display:none;margin-top:0.5rem;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2026 Vitória Baltazar</div>
+  <div class="footer-credit">Desenvolvido com <span>♥</span> &amp; muito café</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
